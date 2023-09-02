@@ -94,18 +94,6 @@ public class TrainerScheduleServiceImpl implements TrainerScheduleService {
         return res;
     }
 
-    /*private int overLap(List<Training> trainings, LocalTime timeStart) {
-        int count = 0;
-        for (Training training : trainings) {
-            LocalTime stop = timeStart.plusMinutes(90);
-            LocalTime start1 = training.getTimeStart();
-            LocalTime stop1 = training.getTimeStart().plusMinutes(90);
-            if (Util.isOverlapping(timeStart, stop, start1, stop1)) {
-                count++;
-            }
-        }
-        return count;
-    }*/
 
     @Override
     public TrainerSchedule delete(Long idTrainer, String dayWeek) {
