@@ -1,0 +1,147 @@
+### POST User
+POST localhost:8080/user
+content-type:application/json
+
+{
+  "login": "123",
+  "password": "123",
+  "name": "Vasya"
+}
+
+### GET check User by param
+GET localhost:8080/user?login=123&password=123
+
+### GET User by id
+GET localhost:8080/user/1
+
+
+### DELETE User by id
+DELETE localhost:8080/user/1
+
+### POST Apprentice
+POST localhost:8080/apprentice/
+content-type:application/json
+
+{
+  "surname": "Petrov",
+  "name": "Petr",
+  "patronymic": "Petrovich",
+  "phoneNumber": "88005553535"
+}
+
+### GET all Apprentice
+GET localhost:8080/apprentice
+
+### GET Apprentice by id
+GET localhost:8080/apprentice/1
+
+### PUT Apprentice
+PUT localhost:8080/apprentice
+content-type:application/json
+
+{
+  "id": 1,
+  "surname": "Vasilev",
+  "name": "Vasiliy",
+  "patronymic": "Vasilevich",
+  "phoneNumber": "8800555353"
+}
+
+### DELETE Apprentice by id
+DELETE localhost:8080/apprentice/1
+
+### POST Trainer
+POST localhost:8080/trainer/
+content-type:application/json
+
+{
+  "surname": "Ivanov",
+  "name": "Ivan",
+  "patronymic": "Ivanovich",
+  "experience": 2
+}
+
+### GET all Trainer
+GET localhost:8080/trainer
+
+### GET Trainer by id
+GET localhost:8080/trainer/1
+
+### PUT Trainer
+PUT localhost:8080/trainer
+content-type:application/json
+
+{
+  "id": 1,
+  "surname": "Derevyanko",
+  "name": "Roman",
+  "patronymic": "Nikolaevich",
+  "experience": 3
+}
+
+### DELETE Trainer by id
+DELETE localhost:8080/trainer/1
+
+
+### POST TrainerSchedule
+POST localhost:8080/trainer_schedule/2?dayWeek=monday&start=12:00&end=13:00
+
+
+### GET all TrainerSchedule
+GET localhost:8080/trainer_schedule/
+
+
+### GET TrainerSchedule by idTrainer and DayWeek
+GET localhost:8080/trainer_schedule/localTime/1?dayWeek=monday
+
+### GET TrainerSchedule by id
+GET localhost:8080/trainer_schedule/2
+
+### DELETE TrainerSchedule by id
+DELETE localhost:8080/trainer_schedule/2?dayWeek=monday
+
+
+### POST Trainer
+POST localhost:8080/trainer/
+content-type:application/json
+
+{
+  "surname": "Ivanov",
+  "name": "Ivan",
+  "patronymic": "Ivanovich",
+  "experience": 2
+}
+
+### POST TrainerSchedule
+POST localhost:8080/trainer_schedule/1?dayWeek=monday&start=12:10&end=13:30
+
+### POST TrainerSchedule
+POST localhost:8080/trainer_schedule/2?dayWeek=monday&start=12:00&end=13:00
+
+### POST TrainerSchedule
+POST localhost:8080/trainer_schedule/6?dayWeek=monday&start=09:00&end=14:00
+
+### POST TrainerSchedule
+POST localhost:8080/trainer_schedule/5?dayWeek=saturday&start=10:00&end=13:00
+
+### POST Training
+POST localhost:8080/training/13/6?numGym=25&date=17.07.2023&timeStart=10:00
+
+### GET Training by id
+GET localhost:8080/training/1
+
+### GET Training by Apprentice id
+GET localhost:8080/training/getByApprentice?id=1
+
+### GET Training by Trainer id
+GET localhost:8080/training/getByTrainer?id=5
+
+### DELETE Training by id
+DELETE localhost:8080/training/1
+
+
+
+### GET TrainerSchedule by idTrainer and DayWeek
+GET localhost:8080/trainer_schedule/localTime/1?date=31.07.2023
+### POST Training
+POST localhost:8080/training/3/1?numGym=1&date=24.07.2023&timeStart=10:00
