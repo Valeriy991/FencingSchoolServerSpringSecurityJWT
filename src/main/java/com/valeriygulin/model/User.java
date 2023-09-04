@@ -31,9 +31,4 @@ public class User {
     @JsonFormat(pattern = "dd.MM.yyyy HH:mm:ss", shape = JsonFormat.Shape.STRING)
     private LocalDateTime regDate = LocalDateTime.now();
 
-    /*public User(@NonNull String login, @NonNull String password, @NonNull String name) {
-        this.login = login;
-        this.password = password;
-        this.name = name;
-    }*/
 }
