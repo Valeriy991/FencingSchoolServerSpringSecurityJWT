@@ -5,9 +5,11 @@ import com.valeriygulin.repository.TrainerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class TrainerServiceImpl implements TrainerService {
     private TrainerRepository trainerRepository;
 
@@ -40,9 +42,9 @@ public class TrainerServiceImpl implements TrainerService {
     @Override
     public Trainer update(Trainer trainer) {
         Trainer fromBase = this.get(trainer.getId());
-        fromBase.setSurname(trainer.getSurname());
-        fromBase.setName(trainer.getName());
-        fromBase.setPatronymic(trainer.getPatronymic());
+        fromBase.setFirstName(trainer.getFirstName());
+        fromBase.setUserName(trainer.getUserName());
+        fromBase.setLastName(trainer.getLastName());
         fromBase.setExperience(trainer.getExperience());
         try {
             this.trainerRepository.save(fromBase);

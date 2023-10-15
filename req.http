@@ -1,108 +1,163 @@
-### POST User
-POST localhost:8080/user
+### POST ADMIN
+POST localhost:8075/admin
+content-type: application/json
+
+{
+  "userName": "Kirill",
+  "firstName": "Kotov",
+  "lastName": "Dmitrievich",
+  "login": "JavaKing",
+  "password": "123test",
+  "roles": [
+    {
+      "name": "ROLE_ADMIN"
+    }
+  ]
+}
+
+### authentification
+POST localhost:8075/auth?userName=Kirill&password=123test
+
+
+### GET ADMIN by ID not working without Authorization
+GET localhost:8075/user/1
+
+### GET ADMIN by ID
+GET localhost:8075/admin/2
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTIxMywiZXhwIjoxNjk3MTg4ODEzfQ.ozwsXNCaAqnF_vLtbbyr1mNZ-2COLey96SLzwBpWQQ4
+
+
+### DELETE ADMIN by id
+DELETE localhost:8075/admin/1
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
+
+
+### POST APPRENTICE
+POST localhost:8075/apprentice
 content-type:application/json
 
 {
-  "login": "123",
-  "password": "123",
-  "name": "Vasya"
+  "userName": "Petr",
+  "firstName": "Petrov",
+  "lastName": "Petrovich",
+  "login": "JavaK2",
+  "password": "124test",
+  "phoneNumber": "88005553535",
+  "roles": [
+    {
+      "name": "ROLE_APPRENTICE"
+    }
+  ]
 }
 
-### GET check User by param
-GET localhost:8080/user?login=123&password=123
 
-### GET User by id
-GET localhost:8080/user/1
+### GET all APPRENTICE
+GET localhost:8075/apprentice
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
 
 
-### DELETE User by id
-DELETE localhost:8080/user/1
+### GET APPRENTICE by id
+GET localhost:8075/apprentice/1
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
 
-### POST Apprentice
-POST localhost:8080/apprentice/
+### PUT APPRENTICE
+PUT localhost:8075/apprentice
 content-type:application/json
-
-{
-  "surname": "Petrov",
-  "name": "Petr",
-  "patronymic": "Petrovich",
-  "phoneNumber": "88005553535"
-}
-
-### GET all Apprentice
-GET localhost:8080/apprentice
-
-### GET Apprentice by id
-GET localhost:8080/apprentice/1
-
-### PUT Apprentice
-PUT localhost:8080/apprentice
-content-type:application/json
-
-{
-  "id": 1,
-  "surname": "Vasilev",
-  "name": "Vasiliy",
-  "patronymic": "Vasilevich",
-  "phoneNumber": "8800555353"
-}
-
-### DELETE Apprentice by id
-DELETE localhost:8080/apprentice/1
-
-### POST Trainer
-POST localhost:8080/trainer/
-content-type:application/json
-
-{
-  "surname": "Ivanov",
-  "name": "Ivan",
-  "patronymic": "Ivanovich",
-  "experience": 2
-}
-
-### GET all Trainer
-GET localhost:8080/trainer
-
-### GET Trainer by id
-GET localhost:8080/trainer/1
-
-### PUT Trainer
-PUT localhost:8080/trainer
-content-type:application/json
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
 
 {
   "id": 1,
-  "surname": "Derevyanko",
-  "name": "Roman",
-  "patronymic": "Nikolaevich",
-  "experience": 3
+  "userName": "Sidr",
+  "firstName": "Sidorov",
+  "lastName": "Sidorovich",
+  "login": "JavaK666",
+  "password": "666test",
+  "phoneNumber": "88005556666"
 }
 
-### DELETE Trainer by id
-DELETE localhost:8080/trainer/1
+### DELETE APPRENTICE by id
+DELETE localhost:8075/apprentice/1
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
+
+
+### POST TRAINER
+POST localhost:8075/trainer
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
+content-type:application/json
+
+{
+  "userName": "Ivan",
+  "firstName": "Ivanov",
+  "lastName": "Ivanovich",
+  "login": "JavaK777",
+  "password": "777test",
+  "experience": 2,
+  "roles": [
+    {
+      "name": "ROLE_TRAINER"
+    }
+  ]
+}
+
+### GET all TRAINER
+GET localhost:8075/trainer
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
+
+
+### GET TRAINER by id
+GET localhost:8075/trainer/1
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
+
+
+### PUT TRAINER
+PUT localhost:8075/trainer
+content-type:application/json
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
+
+
+{
+  "id": 1,
+  "userName": "Derevyanko",
+  "firstName": "Roman",
+  "lastName": "Nikolaevich",
+  "login": "JavaK999",
+  "password": "999test",
+  "experience": 5
+}
+
+### DELETE TRAINER by id
+DELETE localhost:8075/trainer/1
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
+
 
 
 ### POST TrainerSchedule
-POST localhost:8080/trainer_schedule/2?dayWeek=monday&start=12:00&end=13:00
+POST localhost:8075/trainer_schedule/2?dayWeek=monday&start=12:00&end=13:00
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
+
 
 
 ### GET all TrainerSchedule
-GET localhost:8080/trainer_schedule/
-
+GET localhost:8075/trainer_schedule/
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
 
 ### GET TrainerSchedule by idTrainer and DayWeek
-GET localhost:8080/trainer_schedule/localTime/1?dayWeek=monday
+GET localhost:8075/trainer_schedule/localTime/2?dayWeek=monday
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
 
 ### GET TrainerSchedule by id
-GET localhost:8080/trainer_schedule/2
+GET localhost:8075/trainer_schedule/2
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
+
 
 ### DELETE TrainerSchedule by id
-DELETE localhost:8080/trainer_schedule/2?dayWeek=monday
+DELETE localhost:8075/trainer_schedule/2?dayWeek=monday
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
 
 
-### POST Trainer
-POST localhost:8080/trainer/
+
+### POST TRAINER
+POST localhost:8075/trainer/
 content-type:application/json
 
 {
@@ -113,35 +168,36 @@ content-type:application/json
 }
 
 ### POST TrainerSchedule
-POST localhost:8080/trainer_schedule/1?dayWeek=monday&start=12:10&end=13:30
+POST localhost:8075/trainer_schedule/2?dayWeek=monday&start=12:00&end=13:30
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
+
 
 ### POST TrainerSchedule
-POST localhost:8080/trainer_schedule/2?dayWeek=monday&start=12:00&end=13:00
+POST localhost:8075/trainer_schedule/2?dayWeek=monday&start=12:00&end=13:00
 
 ### POST TrainerSchedule
-POST localhost:8080/trainer_schedule/6?dayWeek=monday&start=09:00&end=14:00
+POST localhost:8075/trainer_schedule/6?dayWeek=monday&start=09:00&end=14:00
 
 ### POST TrainerSchedule
-POST localhost:8080/trainer_schedule/5?dayWeek=saturday&start=10:00&end=13:00
+POST localhost:8075/trainer_schedule/5?dayWeek=saturday&start=10:00&end=13:00
 
 ### POST Training
-POST localhost:8080/training/13/6?numGym=25&date=17.07.2023&timeStart=10:00
+POST localhost:8075/training/2/2?numGym=25&date=16.10.2023&timeStart=12:00
+Authorization: Bearer_eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXJpbGwiLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY5NzE4NTEzNCwiZXhwIjoxNjk3MTg4NzM0fQ.eLkmLs-4AoqDygxtpPCpKbVpUZiRnuxyL32NhyeQ3Zc
 
-### GET Training by id
-GET localhost:8080/training/1
+### GET Training by APPRENTICE id
+GET localhost:8075/training/getByApprentice?id=1
 
-### GET Training by Apprentice id
-GET localhost:8080/training/getByApprentice?id=1
-
-### GET Training by Trainer id
-GET localhost:8080/training/getByTrainer?id=5
+### GET Training by TRAINER id
+GET localhost:8075/training/getByTrainer?id=5
 
 ### DELETE Training by id
-DELETE localhost:8080/training/1
+DELETE localhost:8075/training/1
 
 
 
 ### GET TrainerSchedule by idTrainer and DayWeek
-GET localhost:8080/trainer_schedule/localTime/1?date=31.07.2023
+GET localhost:8075/trainer_schedule/localTime/1?date=31.07.2023
+
 ### POST Training
-POST localhost:8080/training/3/1?numGym=1&date=24.07.2023&timeStart=10:00
+POST localhost:8075/training/3/1?numGym=1&date=24.07.2023&timeStart=10:00

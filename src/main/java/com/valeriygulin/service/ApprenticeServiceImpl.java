@@ -43,16 +43,15 @@ public class ApprenticeServiceImpl implements ApprenticeService {
     @Override
     public Apprentice update(Apprentice apprentice) {
         Apprentice fromBase = this.get(apprentice.getId());
-        fromBase.setName(apprentice.getName());
-        fromBase.setSurname(apprentice.getSurname());
-        fromBase.setPatronymic(apprentice.getPatronymic());
+        fromBase.setUserName(apprentice.getUserName());
+        fromBase.setFirstName(apprentice.getFirstName());
+        fromBase.setLastName(apprentice.getLastName());
         fromBase.setPhoneNumber(apprentice.getPhoneNumber());
         try {
             this.apprenticeRepository.save(fromBase);
             return fromBase;
         } catch (Exception e) {
             throw new IllegalArgumentException("Apprentice is already exists!");
-
         }
     }
 
